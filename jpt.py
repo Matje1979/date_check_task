@@ -23,5 +23,4 @@ def get_commission(date_str):
 
 if __name__ == "__main__":
     date_str = input("Please enter a date:")
-    print(type(date_str))
     print(get_commission(date_str))
