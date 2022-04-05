@@ -10,10 +10,13 @@ def get_commission(date_str):
     pattern = re.compile(
         "^[0-2][0-9][0-9][0-9]-((0[1-9])|(1[0-2]))-(0[1-9]|[1-2][0-9]|3[0-1])$"
     )
-    assert pattern.match(date_str)
+    match = pattern.match(date_str)
+    if not match:
+        return "Please enter a valid date"
 
     date_list = date_str.split("-")
-    if 6 > int(date_list[1][1]) < 9:
+
+    if int(date_list[1][1]) < 9 and int(date_list[1][1]) > 6:
         return float(15)
     return float(10)
 
