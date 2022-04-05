@@ -18,4 +18,7 @@ def get_commission(date_str):
     return float(10)
 
 
-print(get_commission("1999-10-01"))
+if __name__ == "__main__":
+    date_str = input("Please enter a date:")
+    print(type(date_str))
+    print(get_commission(date_str))
